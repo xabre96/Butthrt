@@ -1,23 +1,36 @@
 import React, { Component } from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
+import {
+  Container,
+  Header,
+  Title,
+  Content,
+  Button,
+  Left,
+  Right,
+  Body,
+  Icon,
+} from "native-base";
 import Posts from "../components/Posts";
 
 export default class HomeScreen extends Component {
   render() {
     return (
-      <SafeAreaView style={styles}>
-        <Posts />
-      </SafeAreaView>
+      <Container>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Posts</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content>
+          <Posts />
+        </Content>
+      </Container>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  header: {
-    marginTop: 24,
-    paddingHorizontal: 12
-  }
-});
